@@ -1,0 +1,29 @@
+<f:view contracts="#{contractBean.selectedContract.contractName}"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:composition template="/template.xhtml">
+		<ui:define name="subheader">
+        	Page Header
+    	</ui:define>
+
+		<ui:define name="content">
+			<h:outputText
+				value="Use the Menu to dynamically switch contracts and thereby the theme" />
+			<h:form>
+				<p:menu>
+					<p:submenu id="pt_hierarchy" label="Theme" icon="icon-share">
+						<p:menuitem value="Spark" ajax="false"
+							action="#{contractBean.selectContractByThemename('spark-blue')}"
+							icon="icon-link3" />
+						<p:menuitem value="Titan" ajax="false"
+							action="#{contractBean.selectContractByThemename('titan')}"
+							icon="icon-link3" />
+					</p:submenu>
+				</p:menu>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</f:view>
