@@ -3,6 +3,7 @@ package net.habereder.web.rlc.controller;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
@@ -34,11 +35,11 @@ public class ContractBean implements Serializable {
 	}
 
 	public void selectContractByThemename(String themeName) {
-		for (Theme theme : contracts) {
-			if (theme.getThemeName().equals(themeName)) {
-				selectedContract = theme;
-			}
-		}
+		Optional<Theme> selection = contracts
+				.stream()
+				.filter(c -> c.getThemeName().equals(themeName))
+				.findAny();
+		selectedContract = selection.get();
 	}
 
 	public Theme getSelectedContract() {
