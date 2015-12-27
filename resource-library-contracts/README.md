@@ -1,7 +1,7 @@
 ## Synopsis
 
 This is a little Demo-Project to demonstrate the power of **Resource Library Contracts** in combination with the popular Component-Library **PrimeFaces**. 
-This example is based on Spark and Titan, PrimeFaces premium themes, which are not included in this example. Instead I mocked it with basic css, so you see a difference. In case you want to use PrimeFaces premium themes, just drop the "theme-layout" folder into the contracts-folder, and you are good to go. 
+This example is based on Spark and Titan, PrimeFaces premium themes, which are not included in this example. Instead I mocked it with basic css, so you see a difference. In case you want to use PrimeFaces premium layout, just drop the "<theme>-layout" folder into the contracts-folder, and you are good to go. 
 
 ## Motivation
 
